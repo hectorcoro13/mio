@@ -274,6 +274,11 @@ h1, h2, h3, h4, h5, h6, .sitename {
 .contact .contact-email a:hover {
     color: var(--primary-color);
 }
+.form-control::placeholder {
+    color: var(--subtle-text-color) !important;
+    opacity: 1 !important; /* Asegura que el color del placeholder sea completamente visible */
+}
+
 
 /* --- Footer --- */
 .footer {
