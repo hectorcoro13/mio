@@ -8,10 +8,10 @@
       event.preventDefault();
 
       let thisForm = this;
-      let action = "https://fb54l0pqq2.execute-api.us-east-2.amazonaws.com/prod";
+      let action = "https://fb54l0pqq2.execute-api.us-east-2.amazonaws.com/prod/";
       let recaptcha = thisForm.querySelector('.g-recaptcha');
 
-      thisForm.querySelector('.loading').classList.add('d-block');
+      thisForm.querySelector('.loading').classList.add('d-block'); 
       thisForm.querySelector('.error-message').classList.remove('d-block');
       thisForm.querySelector('.sent-message').classList.remove('d-block');
 
