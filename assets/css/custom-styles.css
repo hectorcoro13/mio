@@ -250,8 +250,9 @@ h1, h2, h3, h4, h5, h6, .sitename {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: var(--text-color);
-  color: var(--primary-color);
+  background: transparent; /* Fondo transparente al pasar el cursor */
+  color: var(--primary-color); /* Letra verde */
+  border: 2px solid var(--primary-color); /* Borde verde */
 }
 
 .contact .contact-email {
