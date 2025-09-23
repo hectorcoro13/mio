@@ -1,0 +1,283 @@
+/*
+* =======================================================
+* Hoja de Estilos Personalizada para el Portafolio de Hector Coronel
+* Versión Final - Senior Developer Best Practices
+* =======================================================
+*/
+
+/* --- Variables Globales de Diseño (Design Tokens) --- */
+:root {
+  --primary-color: #00ff00; /* Verde Neón */
+  --background-color: #121212; /* Negro principal */
+  --surface-color: #1e1e1e; /* Gris para tarjetas y fondos secundarios */
+  --border-color: #444; /* Borde más visible para inputs */
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --subtle-text-color: #a0a0a0;
+  --header-background: rgba(18, 18, 18, 0.85);
+}
+
+/* --- Estilos Base --- */
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .sitename {
+  color: var(--heading-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* --- Estructura de Secciones --- */
+.section {
+  background-color: var(--background-color) !important;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  position: relative;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  bottom: 0;
+  left: calc(50% - 30px);
+}
+
+/* --- Cabecera y Navegación --- */
+#header.header {
+  background-color: var(--header-background) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navmenu a, .navmenu a:focus {
+  color: var(--subtle-text-color);
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.navmenu a:hover, .navmenu .navmenu .active {
+  color: var(--primary-color) !important;
+}
+
+/* --- Sección 'Sobre Mí' (About) --- */
+.about-me {
+  text-align: left;
+}
+
+.about-me h4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.about .profile-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  animation: pulse-glow 2.5s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.2), 0 0 25px rgba(0, 255, 0, 0.1); }
+  100% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.6), 0 0 50px rgba(0, 255, 0, 0.4); }
+}
+
+.about .profile-img {
+  border: 4px solid var(--border-color);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about .profile-wrapper:hover .profile-img {
+  transform: scale(1.05);
+}
+
+.about .btn-custom {
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about .btn-custom:hover {
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.about .social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.about .social-links a:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border-color: var(--primary-color);
+}
+
+
+/* --- Carrusel de Tecnologías --- */
+.tech-carousel img {
+  max-height: 45px;
+  width: auto;
+  filter: none;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tech-carousel .swiper-slide:hover img {
+  transform: scale(1.15);
+}
+
+/* --- Sección de Proyectos (Portfolio) --- */
+.portfolio-item {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.portfolio-info {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-info h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.portfolio-info p {
+  color: var(--subtle-text-color);
+  flex-grow: 1;
+}
+
+.portfolio-info .btn-ver-mas {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: 15px;
+}
+
+.portfolio-info .btn-ver-mas:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* --- Sección de Contacto (Estilo Final) --- */
+.contact .php-email-form {
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.contact .php-email-form .form-control {
+  background-color: var(--surface-color) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-color) !important; /* AÑADIDO: asegura que el texto sea blanco */
+  border-radius: 5px !important;
+  padding: 12px 15px !important;
+  box-shadow: none !important;
+}
+
+.contact .php-email-form .form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2) !important;
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 12px 35px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: var(--text-color);
+  color: var(--primary-color);
+}
+
+.contact .contact-email {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: var(--subtle-text-color);
+}
+
+.contact .contact-email i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.contact .contact-email a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact .contact-email a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Footer --- */
+.footer {
+  background: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  padding: 30px 0;
+}
