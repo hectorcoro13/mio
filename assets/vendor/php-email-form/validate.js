@@ -8,7 +8,7 @@
       event.preventDefault();
 
       let thisForm = this;
-      let action = "https://fb54l0pqq2.execute-api.us-east-2.amazonaws.com/prod/";
+      let action = "https://fb54l0pqq2.execute-api.us-east-2.amazonaws.com/prod/contacto"
       let recaptcha = thisForm.querySelector('.g-recaptcha');
 
       thisForm.querySelector('.loading').classList.add('d-block'); 
